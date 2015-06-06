@@ -6,7 +6,7 @@ class Facebook_model extends CI_Model {
 
 		public function __construct() {
 			Facebook\FacebookSession::setDefaultApplication('1632409676982295', '3320ff3b5405c1da8653cc883166766f');
-			$this->helper_ = new Facebook\FacebookRedirectLoginHelper('http://localhost/Junk/facebook/callback');
+			$this->helper_ = new Facebook\FacebookRedirectLoginHelper('http://localhost/DrunkenTeam/facebook/callback');
 		}
 
 		public function request_url() {
