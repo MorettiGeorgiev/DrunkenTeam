@@ -23,8 +23,10 @@
     font-style: normal;
 }
 body{
-	color: #fff!important;
 	font-family: Raleway, Hevetica!important ;
+}
+.top-wrapper{
+	color: #fff!important;
 }
 .main-nav{
 	background-color: transparent;
@@ -63,4 +65,20 @@ body{
 .nav>li>a:focus, .nav>li>a:hover{
 	background-color: transparent!important;
 	color: #29aba4;
+}
+
+.container-heading{
+	padding: 50px 0 50px 0;
+}
+.step{
+	padding-bottom: 70px;
+}
+.step i{
+	color: #29aba4;
+}
+.step h3{
+	margin-bottom: 20px;
+}
+.steps-wrapper{
+	
 }

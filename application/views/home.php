@@ -9,6 +9,7 @@
     <title>Junk</title>
     <link href="<?php echo base_url()?>assets/css/home.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -52,6 +53,36 @@
         <a href="#" class="btn btn-circle">Learn How</a>
     </div>
     <!-- END TOP -->
+    <div class="container text-center steps-wrapper">
+    <h2 class="container-heading">Alert in <span class="green" >4 simple</span> steps</h2>
+       <div class="row">
+            <div class="col-md-3 text-center step">
+               <i class="fa fa-upload fa-5x"></i>
+               <h3>1. Upload or Take a picture</h3>
+               <p> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat. </p>
+            </div>
+
+            <div class="col-md-3 text-center step">
+               <i class="fa fa-street-view fa-5x"></i>
+               <h3>2. Location of the vechicle</h3>
+               <p> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat. </p>
+            </div>
+
+            <div class="col-md-3 text-center step">
+               <i class="fa fa-user fa-5x"></i>
+               <h3>3. Login or fill in the form</h3>
+               <p> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat. </p>
+            </div>
+
+            <div class="col-md-3 text-center step">
+               <i class="fa fa-paper-plane fa-5x"></i>
+               <h3>4. Alert to "Stolichna obshtina"</h3>
+               <p> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat. </p>
+               
+            </div>
+
+         </div>
+    </div>
     <!--<a href="<?php //echo $requested_url; ?>" class="pull-left">Facebook</a>-->
 
     <!--<a href="#" id="signInButton">Sign in with Google</a>-->
