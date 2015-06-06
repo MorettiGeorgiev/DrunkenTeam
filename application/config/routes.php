@@ -43,6 +43,7 @@ $route['404_override'] = '';
 
 $route['main'] = 'logged_in/main';
 $route['logout'] = 'logged_in/logout';
+$route['uploads'] = 'functions/upload';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -23,7 +23,7 @@
     font-style: normal;
 }
 body{
-	font-family: Raleway, Hevetica!important ;
+	font-family: Ralway, Helvetica!important ;
 }
 .top-wrapper{
 	color: #fff!important;
@@ -53,8 +53,8 @@ body{
 }
 .btn-circle{
 	margin: 50px 0 250px 0!important;
-	padding: 10px 50px!important;
-	font-size: 25px!important;
+	padding: 10px 40px!important;
+	font-size: 22px!important;
 	color: #ddd;
 	border-radius: 70px!important;
 	background-color: #29aba4;
