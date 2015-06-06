@@ -89,10 +89,17 @@
     <!--<a href="#" id="signInButton">Sign in with Google</a>-->
     <!--END MIDDLE -->
 
-    
-      <form action="http://localhost/DrunkenTeam/uploads" method="post" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data">
-</form>
-    
+    <div class="carousel" id="main">
+      <div class="carousel-inner">
+        <div class="item active">
+          <form action="http://localhost/DrunkenTeam/uploads" accept="image/*" method="post" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data"></form>
+          <a href="#main" class="btn btn-primary" data-slide-to="1">Продължи към следващата стъпка</a>
+        </div>
+        <div class="item">
+          <p>test</p>
+        </div>
+      </div>
+    </div>
     <script src="https://apis.google.com/js/client:platform.js" async defer></script>
     <!-- jQuery -->
     <script src="<?php echo base_url()?>assets/js/jquery.js"></script>
@@ -113,6 +120,10 @@
          });
         });
     </script>
-    
+    <script type="text/javascript">
+      $('.carousel').carousel({
+          interval: false
+      })  
+    </script>
 </body>
 </html>
