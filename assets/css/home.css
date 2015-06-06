@@ -82,3 +82,9 @@ body{
 .steps-wrapper{
 	
 }
+
+.item {text-align: center;}
+
+.image-form {width: 50%; border: 2px dashed #474747 !important; border-radius: 15px; margin: 0 auto;}
+
+#map {width: 70%; height: 500px;}

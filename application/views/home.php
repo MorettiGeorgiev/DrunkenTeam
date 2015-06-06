@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body onload="initMap()">
 	<?php if (is_logged_in()) redirect('main'); ?>
     <div class="container-fluid top-wrapper text-center">
     	<nav class="navbar main-nav">
@@ -92,11 +92,78 @@
     <div class="carousel" id="main">
       <div class="carousel-inner">
         <div class="item active">
-          <form action="http://localhost/DrunkenTeam/uploads" accept="image/*" method="post" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data"></form>
+          <form action="http://localhost/DrunkenTeam/uploads" accept="image/*" method="post" class="dropzone image-form" id="my-awesome-dropzone" enctype="multipart/form-data"></form>
           <a href="#main" class="btn btn-primary" data-slide-to="1">Продължи към следващата стъпка</a>
         </div>
         <div class="item">
-          <p>test</p>
+          <div id="map"></div>
+          <label for="title">Координати</label><br />
+          <input type="text" class="small-input" id="latFld" disabled="true" value="-" />
+          <input type="text" class="small-input" id="lngFld" disabled="true" value="-" />
+          <a href="#main" class="btn btn-primary" data-slide-to="2">Продължи към следващата стъпка</a>
+        </div>
+        <div class="item">
+          <form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Form Name</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="names">Имена</label>  
+  <div class="col-md-8">
+  <input id="names" name="names" type="text" placeholder="Трите имена" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="phone">Телефон</label>  
+  <div class="col-md-8">
+  <input id="phone" name="phone" type="text" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email">Е-мейл адрес</label>  
+  <div class="col-md-8">
+  <input id="email" name="email" type="text" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="reg_number">Рег. номер на МПС</label>  
+  <div class="col-md-8">
+  <input id="reg_number" name="reg_number" type="text" placeholder="" class="form-control input-md">
+  <span class="help-block">В случай, че МПС-то има регистрационен номер</span>  
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="description">Допълнително описание</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="description" name="description">Допълнителна информация относно изоставеното МПС</textarea>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit"></label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-danger">Изпрати сигнала</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
         </div>
       </div>
     </div>
@@ -125,5 +192,56 @@
           interval: false
       })  
     </script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var map;
+            var markersArray = [];
+
+            function initMap()
+            {
+                var latlng = new google.maps.LatLng(42.6954322, 23.3239467);
+                var myOptions = {
+                    zoom: 12,
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+                // add a click event handler to the map object
+                google.maps.event.addListener(map, "click", function(event)
+                {
+                    // place a marker
+                    placeMarker(event.latLng);
+
+                    // display the lat/lng in your form's lat/lng fields
+                    document.getElementById("latFld").value = event.latLng.lat();
+                    document.getElementById("lngFld").value = event.latLng.lng();
+                });
+            }
+            function placeMarker(location) {
+                // first remove all markers if there are any
+                deleteOverlays();
+
+                var marker = new google.maps.Marker({
+                    position: location, 
+                    map: map
+                });
+
+                // add marker in markers array
+                markersArray.push(marker);
+
+                //map.setCenter(location);
+            }
+
+            // Deletes all markers in the array by removing references to them
+            function deleteOverlays() {
+                if (markersArray) {
+                    for (i in markersArray) {
+                        markersArray[i].setMap(null);
+                    }
+                markersArray.length = 0;
+                }
+            }
+        </script>
 </body>
 </html>
