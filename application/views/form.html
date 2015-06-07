@@ -16,7 +16,7 @@
 
 	function checkForm(form) {
 		flag = 0;
-		re = /(\w+\s\w+\s\w+)/;
+		re = /([\wа-я]+\s[\wа-я]+\s[\wа-я]+)/gi;
 		error_handler = document.getElementById("name-error");
 		if(form.names.value == "" || !re.test(form.names.value)) {
 			error_handler.innerHTML="Моля въведете Вашите имена.";
@@ -108,7 +108,7 @@
 <!-- Textarea -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="description">Допълнително описание</label>
-  <div class="col-md-4">                     
+  <div class="col-md-8">                     
     <textarea class="form-control" id="description" name="description" placeholder="Допълнителна информация относно изоставеното МПС" value="<?php echo set_value('description'); ?>"></textarea>
   </div>
 </div>
@@ -116,7 +116,7 @@
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" ></label>
-  <div class="col-md-4">
+  <div class="col-md-8 text-right">
     <p class="btn btn-danger" onclick='postAll();'>Изпрати сигнала</p>
   </div>
 </div>

@@ -38,6 +38,8 @@
 		  	<td>ID</td>
 		  	<td>reg_number</td>
 		  	<td>photo url</td>
+		  	<td>latFld</td>
+		  	<td>lngFld</td>
 		  	<td>other_desc</td>
 		  	<td>date</td>
 		  	<td>name</td>
@@ -49,7 +51,9 @@
 					echo "<tr>";
 					echo "<td>{$signal['id']}</td>";
 					echo "<td>{$signal['reg_number']}</td>";
-					echo "<td>{$signal['photo']}</td>";
+					echo "<td><a href='{$signal['photo']}'>{$signal['photo']}</a></td>";
+					echo "<td>{$signal['latFld']}</td>";
+					echo "<td>{$signal['lngFld']}</td>";
 					echo "<td>{$signal['other_desc']}</td>";
 					echo "<td>{$signal['date']}</td>";
 					echo "<td>{$signal['names']}</td>";

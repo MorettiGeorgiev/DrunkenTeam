@@ -4,12 +4,15 @@
 			// print_r($_POST);
 
 			$data = array(
-			   'reg_number' => $_POST['reg_number'] ,
-			   'names' => $_POST['names'] ,
-			   	'phone' => $_POST['phone'] ,
-			   'email' => $_POST['email'] ,
+			   'reg_number' => $_POST['reg_number'],
 			   'photo' => $this->session->userdata('file'),
-			);
+			   'latFld' => '42.' . mt_rand(),
+			   'lngFld' => '23.' . mt_rand(),
+			   'other_desc' => $_POST['description'],
+			   'names' => $_POST['names'] ,
+			   'phone' => $_POST['phone'] ,
+			   'email' => $_POST['email'] ,
+			   			);
 			$this->db->insert('signals', $data);
 			redirect(base_url());
 		}
