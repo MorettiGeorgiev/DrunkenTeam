@@ -14,8 +14,4 @@
 			$db->insert('signals', $data);
 		}
 
-		public function upload_photo() {
-			// UPLOADING PHOTO
-			// random name and return it
-		}
 	}
