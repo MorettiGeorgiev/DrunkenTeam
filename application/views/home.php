@@ -117,66 +117,7 @@
 
                 <div class="row-fluid item signal-form-wrapper">
                      <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="1"><i class="fa fa-chevron-left fa-5x"></i></a>
-                        
-                    <form class="form-horizontal col-md-10 col-sm-10 col-xs-6 ">
-                        <fieldset>
-
-                            <!-- Form Name -->
-                            <legend>Подай сигнал</legend>
-
-                            <!-- Text input-->
-                            <div class="form-group">
-                              <label class="col-md-4 control-label" for="names">Имена</label>  
-                              <div class="col-md-8">
-                              <input id="names" name="names" type="text" placeholder="Трите имена" class="form-control input-md" required="">
-                                
-                              </div>
-                            </div>
-
-                            <!-- Text input-->
-                            <div class="form-group">
-                              <label class="col-md-4 control-label" for="phone">Телефон</label>  
-                              <div class="col-md-8">
-                              <input id="phone" name="phone" type="text" placeholder="" class="form-control input-md">
-                                
-                              </div>
-                            </div>
-
-                            <!-- Text input-->
-                            <div class="form-group">
-                              <label class="col-md-4  control-label" for="email">Е-мейл адрес</label>  
-                              <div class="col-md-8">
-                              <input id="email" name="email" type="text" placeholder="" class="form-control input-md">
-                                
-                              </div>
-                            </div>
-
-                            <!-- Text input-->
-                            <div class="form-group">
-                              <label class="col-md-4 control-label" for="reg_number">Рег. номер на МПС</label>  
-                              <div class="col-md-8">
-                              <input id="reg_number" name="reg_number" type="text" placeholder="" class="form-control input-md">
-                              <span class="help-block">В случай, че МПС-то има регистрационен номер</span>  
-                              </div>
-                            </div>
-
-                            <!-- Textarea -->
-                            <div class="form-group">
-                              <label class="col-md-4 control-label" for="description">Допълнително описание</label>
-                              <div class="col-md-4">                     
-                                <textarea class="form-control" id="description" name="description">Допълнителна информация относно изоставеното МПС</textarea>
-                              </div>
-                            </div>
-
-                            <!-- Button -->
-                            <div class="form-group ">
-                              <label class="col-md-12 control-label" for="submit"></label>
-                              <div class="col-md-12 text-right">
-                                <button id="submit" name="submit" class="btn btn-danger">Изпрати сигнала</button>
-                              </div>
-                            </div>
-                        </fieldset>
-                    </form>
+                        <?php include '/application/views/form.html'; ?>
                 </div>
             </div>
         </div>
