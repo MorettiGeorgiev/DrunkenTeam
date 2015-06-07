@@ -22,7 +22,7 @@
 
 </head>
 
-<body onload="initMap()">
+<body>
 	<?php if (is_logged_in()) redirect('main'); ?>
     <div class="container-fluid top-wrapper text-center">
     	<nav class="navbar main-nav">
@@ -93,13 +93,14 @@
                     <div class="item active text-right">
                         
                         <form action="http://localhost/DrunkenTeam/uploads" accept="image/*" method="post" class="dropzone image-form col-md-11 col-sm-11 col-xs-9" id="my-awesome-dropzone" enctype="multipart/form-data"></form>
-                        <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next" data-slide-to="1"><i class="fa fa-chevron-right fa-5x"></i></a> 
+                        <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next" data-slide-to="1"  onclick="initMap()"><i class="fa fa-chevron-right fa-5x"></i></a> 
 
                 </div>
 
                 <div class="item">
                     <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="0"><i class="fa fa-chevron-left fa-5x"></i></a>
-                    <div id="map" class="col-md-10 col-sm-10 col-xs-6"></div>
+                    <div id="map" class="col-md-10 col-sm-10 col-xs-6" ></div>
+                    
                         
                         <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="2"><i class="fa fa-chevron-right fa-5x"></i></a>
                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -225,21 +226,32 @@
           interval: false
       })  
     </script>
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.ui.map.js"></script>
+        <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.ui.map.extensions.js"></script>
+        
         <script type="text/javascript">
             var map;
             var markersArray = [];
 
             function initMap()
-            {
+            {   
                 var latlng = new google.maps.LatLng(42.6954322, 23.3239467);
                 var myOptions = {
                     zoom: 12,
                     center: latlng,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
+
+                //if(navigator.geolocation) {
+                  //navigator.geolocation.getCurrentPosition(function(position) {
+
+                  //});
+                //}
                 map = new google.maps.Map(document.getElementById("map"), myOptions);
 
+                myLocation();
                 // add a click event handler to the map object
                 google.maps.event.addListener(map, "click", function(event)
                 {
@@ -250,6 +262,24 @@
                     document.getElementById("latFld").value = event.latLng.lat();
                     document.getElementById("lngFld").value = event.latLng.lng();
                 });
+
+            }
+            function myLocation(){
+                deleteOverlays();
+                 if(navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                      var myloc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                      var marker = new google.maps.Marker({
+                        position: myloc,
+                        map: map
+                      });
+                      map.setCenter(myloc);
+                      map.setZoom(16);
+                       document.getElementById("latFld").value = myloc.lat();
+                      document.getElementById("lngFld").value = myloc.lng();
+                      markersArray.push(marker);
+                    });
+                  };
             }
             function placeMarker(location) {
                 // first remove all markers if there are any
@@ -276,5 +306,6 @@
                 }
             }
         </script>
+        <script>
 </body>
 </html>
