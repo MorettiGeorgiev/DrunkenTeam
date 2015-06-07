@@ -8,6 +8,11 @@ class Upload extends CI_Controller{
 				$this->load->helper('string');
 				$new_name = random_string('unique') . '.' . end(explode('.', $_FILES['file']['name']));
 			    move_uploaded_file($_FILES['file']['tmp_name'], "assets/uploads/{$new_name}");
+			    $newdata = array(
+                   'file'  => $_FILES['file']['tmp_name'], "assets/uploads/{$new_name}"
+               );
+
+				$this->session->set_userdata($newdata);
 			}
 		}
 	}
