@@ -42,7 +42,6 @@
             <div class="collapse navbar-collapse " id="navbar">
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Начало</a></li>
-                <li><a href="#">Как работи</a></li>
                 <li><a href="#">Изпрати сигнал</a></li>
 
               </ul>      
@@ -55,8 +54,8 @@
     </div>
     <!-- END TOP -->
     <div class="container text-center steps-wrapper">
-    <h2 class="container-heading">Сигнализирай с <span class="green" >4 прости</span> стъпки</h2>
-       <div class="row">
+        <h2 class="container-heading">Сигнализирай с <span class="green" >4 прости</span> стъпки</h2>
+        <div class="row">
             <div class="col-md-3 text-center step">
                <i class="fa fa-upload fa-5x"></i>
                <h3>1. Качи или направи снимка</h3>
@@ -83,90 +82,124 @@
             </div>
 
          </div>
-    </div>
+    
     <!--<a href="<?php //echo $requested_url; ?>" class="pull-left">Facebook</a>-->
 
     <!--<a href="#" id="signInButton">Sign in with Google</a>-->
     <!--END MIDDLE -->
 
     <div class="carousel" id="main">
-      <div class="carousel-inner">
-        <div class="item active">
-          <form action="http://localhost/DrunkenTeam/uploads" accept="image/*" method="post" class="dropzone image-form" id="my-awesome-dropzone" enctype="multipart/form-data"></form>
-          <a href="#main" class="btn btn-primary" data-slide-to="1">Продължи към следващата стъпка</a>
+                <div class="carousel-inner">
+                    <div class="item active text-right">
+                        
+                        <form action="http://localhost/DrunkenTeam/uploads" accept="image/*" method="post" class="dropzone image-form col-md-11 col-sm-11 col-xs-9" id="my-awesome-dropzone" enctype="multipart/form-data"></form>
+                        <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next" data-slide-to="1"><i class="fa fa-chevron-right fa-5x"></i></a> 
+
+                </div>
+
+                <div class="item">
+                    <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="0"><i class="fa fa-chevron-left fa-5x"></i></a>
+                    <div id="map" class="col-md-10 col-sm-10 col-xs-6"></div>
+                        
+                        <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="2"><i class="fa fa-chevron-right fa-5x"></i></a>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <form class="form-inline">
+                        <label for="title">Координати</label><br />
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="latFld" disabled="true" value="-" />
+                                <input type="text" class="form-control" id="lngFld" disabled="true" value="-" />
+                            </div>
+                            
+                        </form>  
+                    </div>
+                </div>
+
+                <div class="row-fluid item signal-form-wrapper">
+                     <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="1"><i class="fa fa-chevron-left fa-5x"></i></a>
+                        
+                    <form class="form-horizontal col-md-10 col-sm-10 col-xs-6 ">
+                        <fieldset>
+
+                            <!-- Form Name -->
+                            <legend>Подай сигнал</legend>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="names">Имена</label>  
+                              <div class="col-md-8">
+                              <input id="names" name="names" type="text" placeholder="Трите имена" class="form-control input-md" required="">
+                                
+                              </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="phone">Телефон</label>  
+                              <div class="col-md-8">
+                              <input id="phone" name="phone" type="text" placeholder="" class="form-control input-md">
+                                
+                              </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-md-4  control-label" for="email">Е-мейл адрес</label>  
+                              <div class="col-md-8">
+                              <input id="email" name="email" type="text" placeholder="" class="form-control input-md">
+                                
+                              </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="reg_number">Рег. номер на МПС</label>  
+                              <div class="col-md-8">
+                              <input id="reg_number" name="reg_number" type="text" placeholder="" class="form-control input-md">
+                              <span class="help-block">В случай, че МПС-то има регистрационен номер</span>  
+                              </div>
+                            </div>
+
+                            <!-- Textarea -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="description">Допълнително описание</label>
+                              <div class="col-md-4">                     
+                                <textarea class="form-control" id="description" name="description">Допълнителна информация относно изоставеното МПС</textarea>
+                              </div>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="form-group ">
+                              <label class="col-md-12 control-label" for="submit"></label>
+                              <div class="col-md-12 text-right">
+                                <button id="submit" name="submit" class="btn btn-danger">Изпрати сигнала</button>
+                              </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="item">
-          <div id="map"></div>
-          <label for="title">Координати</label><br />
-          <input type="text" class="small-input" id="latFld" disabled="true" value="-" />
-          <input type="text" class="small-input" id="lngFld" disabled="true" value="-" />
-          <a href="#main" class="btn btn-primary" data-slide-to="2">Продължи към следващата стъпка</a>
-        </div>
-        <div class="item">
-          <form class="form-horizontal">
-<fieldset>
-
-<!-- Form Name -->
-<legend>Form Name</legend>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="names">Имена</label>  
-  <div class="col-md-8">
-  <input id="names" name="names" type="text" placeholder="Трите имена" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="phone">Телефон</label>  
-  <div class="col-md-8">
-  <input id="phone" name="phone" type="text" placeholder="" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="email">Е-мейл адрес</label>  
-  <div class="col-md-8">
-  <input id="email" name="email" type="text" placeholder="" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="reg_number">Рег. номер на МПС</label>  
-  <div class="col-md-8">
-  <input id="reg_number" name="reg_number" type="text" placeholder="" class="form-control input-md">
-  <span class="help-block">В случай, че МПС-то има регистрационен номер</span>  
-  </div>
-</div>
-
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="description">Допълнително описание</label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="description" name="description">Допълнителна информация относно изоставеното МПС</textarea>
-  </div>
-</div>
-
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="submit"></label>
-  <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-danger">Изпрати сигнала</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-
-        </div>
-      </div>
     </div>
+    <footer>
+        <div class="container">
+            <div class="row copyright-wrapper">
+                <div class="col-md-8">
+                    <ul class="copyright list-inline">
+                        <li>©Junco. All rights reserved</li>
+                        <li>Design: Drunken Team</li>
+                        <li>Images: Free</li>
+                    </ul>
+                </div>
+                <div class="com-md-4">
+                    <ul class="social-networks list-inline text-right">
+                        <li><a href="#"><i class="fa fa-facebook    fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter     fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus fa-2x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://apis.google.com/js/client:platform.js" async defer></script>
     <!-- jQuery -->
     <script src="<?php echo base_url()?>assets/js/jquery.js"></script>

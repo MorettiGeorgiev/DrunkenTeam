@@ -40,7 +40,6 @@ body{
 .brand{
 	font-size: 30px!important;
 	font-weight: 600!important;
-	color: #fff!important;
 }
 .top-wrapper{
 	background: url('../img/background.jpeg') no-repeat  center;
@@ -79,12 +78,50 @@ body{
 .step h3{
 	margin-bottom: 20px;
 }
-.steps-wrapper{
-	
-}
 
 .item {text-align: center;}
+.item a{
+	color: rgba(71,71,71, 0.8);
+	padding-top: 20px;
+}
+.item a:hover{
+	color: rgba(71,71,71, 1);
+}
 
-.image-form {width: 50%; border: 2px dashed #474747 !important; border-radius: 15px; margin: 0 auto;}
+.image-form {width: 100%; border: 2px dashed #474747 !important; border-radius: 15px; margin: 0 auto;}
 
-#map {width: 70%; height: 500px;}
+#map {height: 500px; margin-bottom: 20px;}
+
+.btn-next i{
+	margin-top: 20px;
+}
+.btn-next-location{
+	margin-top: 170px;
+}
+#latFld, #lngFld{
+	width: 255px;
+}
+.signal-form-wrapper{
+	margin:0px auto!important;
+	width: 80%;
+}
+textarea{
+	min-width: 100%!important;
+	height: 150px!important;
+	resize: none!important;
+}
+footer{
+
+	margin-top: 150px;
+	background: #383b43;
+}
+.copyright-wrapper{
+	padding: 50px 0!important;
+}
+.copyright li{
+	color: #ddd;
+}
+.social-networks li a{
+	margin-left: 5px;
+	color: #29ABA4!important;
+}
