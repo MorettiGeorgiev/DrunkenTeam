@@ -105,6 +105,11 @@ body{
 	margin:0px auto!important;
 	width: 80%;
 }
+.error-handler{
+	font-weight: bold;
+	color: #ad1313;
+}
+
 textarea{
 	min-width: 100%!important;
 	height: 150px!important;

@@ -104,7 +104,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <form class="form-inline">
                         <label for="title">Координати</label><br />
-                            <div class="form-group">
+                            <div class="form-group" method="post" action="/DrunkenTeam/send/">
                                 <input type="text" class="form-control" id="latFld" disabled="true" value="-" />
                                 <input type="text" class="form-control" id="lngFld" disabled="true" value="-" />
                             </div>
