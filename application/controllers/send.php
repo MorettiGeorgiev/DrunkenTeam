@@ -1,11 +1,16 @@
 <?php
 	class Send extends CI_Controller {
 		public function index() {
-			if (!is_logged_in()) redirect('home');
+			// print_r($_POST);
 
-			if ($this->form_validation->run('signal_send')) {
-
-			}
+			$data = array(
+			   'reg_number' => $_POST['reg_number'] ,
+			   'names' => $_POST['names'] ,
+			   	'phone' => $_POST['phone'] ,
+			   'email' => $_POST['email'] ,
+			);
+			$this->db->insert('signals', $data);
+			redirect(base_url());
 		}
 
 		public function upload() {
