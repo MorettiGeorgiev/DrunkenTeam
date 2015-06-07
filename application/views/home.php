@@ -23,17 +23,15 @@
 </head>
 
 <body onload="initMap()">
-	<?php if (is_logged_in()) redirect('main'); ?>
     <div class="container-fluid top-wrapper text-center">
     	<nav class="navbar main-nav">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navba">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                 <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="fa fa-bars fa-1x"></span>
+                
               </button>
               <a class="navbar-brand brand" href="#"><span class="green">Junco</span></a>
             </div>
@@ -91,10 +89,9 @@
     <div class="carousel" id="main">
                 <div class="carousel-inner">
                     <div class="item active text-right">
-                        
-                        <form action="http://localhost/DrunkenTeam/uploads" accept="image/*" method="post" class="dropzone image-form col-md-11 col-sm-11 col-xs-9" id="my-awesome-dropzone" enctype="multipart/form-data"></form>
+                        <span id="error"></span>
+                        <form action="http://localhost/DrunkenTeam/uploads" accept="image/*" method="post" class="dropzone image-form col-md-11 col-sm-11 col-xs-9" id="myAwesomeDropzone" enctype="multipart/form-data"></form>
                         <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next" data-slide-to="1"><i class="fa fa-chevron-right fa-5x"></i></a> 
-
                 </div>
 
                 <div class="item">
@@ -206,25 +203,17 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url()?>assets/js/dropzone.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-          $('#signInButton').click(function() {
-            $(this).attr('href','https://accounts.google.com/o/oauth2/auth?scope=' +
-              'https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login&' +
-              'state=generate_a_unique_state_value&' +
-              'redirect_uri=http://localhost/DrunkenTeam/gplus/callback/&'+
-              'response_type=code&' +
-              'client_id=997873084418-btuk1dkqlpd9dhglo0b7iibai6uj87e4.apps.googleusercontent.com&'+
-              'access_type = offline');
-              return true; // Continue with the new href.
-         });
-        });
-    </script>
+    
     <script type="text/javascript">
       $('.carousel').carousel({
           interval: false
       })  
     </script>
+<script type="text/javascript">
+   Dropzone.options.myAwesomeDropzone = {
+        acceptedFiles: "image/*",
+    };
+ </script>
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript">
             var map;
