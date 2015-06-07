@@ -8,6 +8,7 @@
 			   'names' => $_POST['names'] ,
 			   	'phone' => $_POST['phone'] ,
 			   'email' => $_POST['email'] ,
+			   'photo' => $this->session->userdata('file'),
 			);
 			$this->db->insert('signals', $data);
 			redirect(base_url());
