@@ -23,9 +23,9 @@
 </head>
 
 <body>
-	<?php if (is_logged_in()) redirect('main'); ?>
+  <?php if (is_logged_in()) redirect('main'); ?>
     <div class="container-fluid top-wrapper text-center">
-    	<nav class="navbar main-nav">
+      <nav class="navbar main-nav">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -50,10 +50,10 @@
         </nav>
         <h1 class = "header">Здравей.Това е <span class="green">Junco</span></h1>
         <h2>Сигнализирай за <span class="green">Junco</span> коли <span class="green">само с</span> няколко клика!</h2>
-        <a href="#" class="btn btn-circle">Разбери Повече</a>
+        <a id="scroll" href="#" class="btn btn-circle">Разбери Повече</a>
     </div>
     <!-- END TOP -->
-    <div class="container text-center steps-wrapper">
+    <div class="container text-center steps-wrapper" id="start">
         <h2 class="container-heading">Сигнализирай с <span class="green" >4 прости</span> стъпки</h2>
         <div class="row">
             <div class="col-md-3 text-center step">
@@ -246,7 +246,12 @@
                 markersArray.length = 0;
                 }
             }
+
+          $("#scroll").click(function() {
+              $('html, body').animate({
+                  scrollTop: $("#start").offset().top
+              }, 500);
+          });
         </script>
-        <script>
 </body>
 </html>
