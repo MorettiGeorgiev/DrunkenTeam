@@ -125,3 +125,21 @@ footer{
 	margin-left: 5px;
 	color: #29ABA4!important;
 }
+@media (max-width: 767px) {
+	.header{
+	padding-top: 10px;
+	font-size: 3em;
+	}
+	.main-nav{
+	background-color: transparent;
+	padding-top: 50px;
+	}
+	.sub-heading{
+		font-size: 25px;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 768px) {
+
+}
