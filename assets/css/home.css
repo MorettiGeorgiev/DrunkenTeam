@@ -137,6 +137,15 @@ footer{
 	.sub-heading{
 		font-size: 25px;
 	}
+	.btn-next-location{
+		font-size: 10px;
+		padding-top: 0px!important;
+		margin-top: 0px!important;
+		
+	}
+	.btn-next-location i{
+
+	}
 }
 
 /* Medium devices (desktops, 992px and up) */

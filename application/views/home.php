@@ -96,8 +96,8 @@
                 </div>
 
                 <div class="item">
-                    <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="0"><i class="fa fa-chevron-left fa-5x"></i></a>
-                    <div id="map" class="col-md-10 col-sm-10 col-xs-6" ></div>
+                    <a href="#main" class=" col-md-1 col-sm-1 col-xs-12 btn-next btn-next-location" data-slide-to="0"><i class="fa fa-chevron-left fa-5x"></i></a>
+                    <div id="map" class="col-md-10 col-sm-10 col-xs-12" ></div>
                     
                         
                         <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="2"><i class="fa fa-chevron-right fa-5x"></i></a>
