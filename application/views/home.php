@@ -23,17 +23,15 @@
 </head>
 
 <body>
-  <?php if (is_logged_in()) redirect('main'); ?>
     <div class="container-fluid top-wrapper text-center">
       <nav class="navbar main-nav">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navba">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                 <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="fa fa-bars"></span>
+                
               </button>
               <a class="navbar-brand brand" href="#"><span class="green">Junco</span></a>
             </div>
@@ -49,7 +47,7 @@
           </div><!-- /.container-fluid -->
         </nav>
         <h1 class = "header">Здравей.Това е <span class="green">Junco</span></h1>
-        <h2>Сигнализирай за <span class="green">Junco</span> коли <span class="green">само с</span> няколко клика!</h2>
+        <h2 class="sub-heading">Сигнализирай за <span class="green">Junco</span> коли <span class="green">само с</span> няколко клика!</h2>
         <a id="scroll" href="#" class="btn btn-circle">Разбери Повече</a>
     </div>
     <!-- END TOP -->
