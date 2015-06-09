@@ -3,15 +3,14 @@
 		public function send() {
 			$data = array(
 				'reg_number' 	=> $this->input->post('reg_number'),
-				'photo'			=> 'photo link', // returned from upload_photo()
-				'other_desc' 	=> $this->input->post('other_desc'),
-				'date' 			=> date('Y-m-d HH:MM:SS'),
+				'photo' 		=> $this->session->userdata('file'),
+				'latFld' 		=> $this->session->userdata('latFld'),
+				'lngFld' 		=> $this->session->userdata('lngFld'),
+				'other_desc' 	=> $this->input->post('description'),
 				'names' 		=> $this->input->post('names'),
 				'phone' 		=> $this->input->post('phone'),
 				'email' 		=> $this->input->post('email'),
 			);
-
-			$db->insert('signals', $data);
+			$this->db->insert('signals', $data);
 		}
-
 	}

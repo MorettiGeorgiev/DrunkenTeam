@@ -24,6 +24,9 @@
 
 <body>
     <div class="container-fluid top-wrapper text-center">
+      <?php if($this->session->flashdata('flashdata_ok') != NULL) : ?>
+      <div class="row-fluid success-message-wrapper "><p class="success-message text-center text-success"><?php echo $this->session->flashdata('flashdata_ok') ?></p></div>
+      <?php endif; ?>
       <nav class="navbar main-nav">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -102,20 +105,22 @@
                         
                         <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="2"><i class="fa fa-chevron-right fa-5x"></i></a>
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <form class="form-inline" action="/DrunkenTeam/Coords/">
+                        <form class="form-inline" action="/DrunkenTeam/coords">
                         <label for="title">Координати</label><br />
-                            <div class="form-group" method="post" action="/DrunkenTeam/send/">
-                                <input type="text" class="form-control" name="latFld" id="latFld" disabled="true" value="-" />
-                                <input type="text" class="form-control" name="lngFld" id="lngFld" disabled="true" value="-" />
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="latFld" id="latFld" readonly="readonly" value="-" />
+                                <input type="text" class="form-control" name="lngFld" id="lngFld" readonly="readonly" value="-" />
                             </div>
-                            
                         </form>  
                     </div>
+                
                 </div>
+
 
                 <div class="row-fluid item signal-form-wrapper">
                      <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="1"><i class="fa fa-chevron-left fa-5x"></i></a>
-                        <?php include '/application/views/form.html'; ?>
+                        <?php $this->load->view($signal_form) ?>
+                        
                 </div>
             </div>
         </div>
@@ -146,20 +151,6 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url()?>assets/js/dropzone.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-          $('#signInButton').click(function() {
-            $(this).attr('href','https://accounts.google.com/o/oauth2/auth?scope=' +
-              'https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login&' +
-              'state=generate_a_unique_state_value&' +
-              'redirect_uri=http://localhost/DrunkenTeam/gplus/callback/&'+
-              'response_type=code&' +
-              'client_id=997873084418-btuk1dkqlpd9dhglo0b7iibai6uj87e4.apps.googleusercontent.com&'+
-              'access_type = offline');
-              return true; // Continue with the new href.
-         });
-        });
-    </script>
     <script type="text/javascript">
       $('.carousel').carousel({
           interval: false
@@ -204,8 +195,10 @@
                     placeMarker(event.latLng);
 
                     // display the lat/lng in your form's lat/lng fields
-                    document.getElementById("latFld").value = event.latLng.lat();
-                    document.getElementById("lngFld").value = event.latLng.lng();
+                    $('#latFld').attr('value', event.latLng.lat());
+                    $('#lngFld').attr('value', event.latLng.lng());
+                    //document.getElementById("latFld").value = event.latLng.lat();
+                    //document.getElementById("lngFld").value = event.latLng.lng();
                 });
 
             }
@@ -220,8 +213,10 @@
                       });
                       map.setCenter(myloc);
                       map.setZoom(16);
-                       document.getElementById("latFld").value = myloc.lat();
-                      document.getElementById("lngFld").value = myloc.lng();
+                      // document.getElementById("latFld").value = myloc.lat();
+                      // document.getElementById("lngFld").value = myloc.lng();
+                      $('#latFld').attr('value', myloc.lat());
+                      $('#lngFld').attr('value', myloc.lng());
                       markersArray.push(marker);
                     });
                   };

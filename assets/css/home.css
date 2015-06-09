@@ -130,6 +130,20 @@ footer{
 	margin-left: 5px;
 	color: #29ABA4!important;
 }
+.success-message-wrapper{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top:  0;
+	background: rgba(0, 0, 0, 0.5);
+}
+.success-message{
+	padding: 10px 0;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
 @media (max-width: 767px) {
 	.header{
 	padding-top: 10px;
@@ -151,9 +165,4 @@ footer{
 	.btn-next-location i{
 
 	}
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 768px) {
-
 }

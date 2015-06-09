@@ -9,8 +9,10 @@
 	function postAll() {
 		if( checkForm(document.getElementById("report-information")) ) {
 			$('form').each(function(){
-	        	$(this).submit();
+	        console.log(this);
+	        (this).submit();
 	    	});
+
 		}
 	}
 
@@ -122,4 +124,4 @@
 </div>
 
 </fieldset>
-<?php echo form_close(); ?>
+<?php echo form_close(); ?>	

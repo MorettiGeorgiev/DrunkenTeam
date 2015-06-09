@@ -11,7 +11,6 @@ class Upload extends CI_Controller{
 			    $newdata = array(
                    'file'  => "/DrunkenTeam/assets/uploads/{$new_name}"
                );
-
 				$this->session->set_userdata($newdata);
 			}
 		}
