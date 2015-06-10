@@ -111,6 +111,7 @@
                                 <input type="text" class="form-control" name="latFld" id="latFld" readonly="readonly" value="-" />
                                 <input type="text" class="form-control" name="lngFld" id="lngFld" readonly="readonly" value="-" />
                             </div>
+                            <input type="submit">
                         </form>  
                     </div>
                 
@@ -119,7 +120,7 @@
 
                 <div class="row-fluid item signal-form-wrapper">
                      <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="1"><i class="fa fa-chevron-left fa-5x"></i></a>
-                        <?php $this->load->view($signal_form) ?>
+                        <?php $this->load->view('signal_form') ?>
                         
                 </div>
             </div>
@@ -150,113 +151,37 @@
     <script src="<?php echo base_url()?>assets/js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url()?>assets/js/dropzone.js"></script>
+    <script src="<?php echo base_url()?>assets/js/dropzone/dropzone.js"></script>
+
     <script type="text/javascript">
       $('.carousel').carousel({
           interval: false
       })  
     </script>
+    
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>assets/js/map/jquery.ui.map.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>assets/js/map/jquery.ui.map.extensions.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>assets/js/map/map.js"> </script>
     <script type="text/javascript">
       Dropzone.options.myAwesomeDropzone = {
         acceptedFiles: 'image/*'
       }
 
     </script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.ui.map.js"></script>
-        <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.ui.map.extensions.js"></script>
-        
-        <script type="text/javascript">
-            var map;
-            var markersArray = [];
+    <script type="text/javascript">
+        $("#scroll").click(function() {
+            $('html, body').animate({
+                scrollTop: $("#start").offset().top
+            }, 500);
+        });
 
-            function initMap()
-            {   
-                var latlng = new google.maps.LatLng(42.6954322, 23.3239467);
-                var myOptions = {
-                    zoom: 12,
-                    center: latlng,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
-
-                //if(navigator.geolocation) {
-                  //navigator.geolocation.getCurrentPosition(function(position) {
-
-                  //});
-                //}
-                map = new google.maps.Map(document.getElementById("map"), myOptions);
-
-                myLocation();
-                // add a click event handler to the map object
-                google.maps.event.addListener(map, "click", function(event)
-                {
-                    // place a marker
-                    placeMarker(event.latLng);
-
-                    // display the lat/lng in your form's lat/lng fields
-                    $('#latFld').attr('value', event.latLng.lat());
-                    $('#lngFld').attr('value', event.latLng.lng());
-                    //document.getElementById("latFld").value = event.latLng.lat();
-                    //document.getElementById("lngFld").value = event.latLng.lng();
-                });
-
-            }
-            function myLocation(){
-                deleteOverlays();
-                 if(navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function(position) {
-                      var myloc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                      var marker = new google.maps.Marker({
-                        position: myloc,
-                        map: map
-                      });
-                      map.setCenter(myloc);
-                      map.setZoom(16);
-                      // document.getElementById("latFld").value = myloc.lat();
-                      // document.getElementById("lngFld").value = myloc.lng();
-                      $('#latFld').attr('value', myloc.lat());
-                      $('#lngFld').attr('value', myloc.lng());
-                      markersArray.push(marker);
-                    });
-                  };
-            }
-            function placeMarker(location) {
-                // first remove all markers if there are any
-                deleteOverlays();
-
-                var marker = new google.maps.Marker({
-                    position: location, 
-                    map: map
-                });
-
-                // add marker in markers array
-                markersArray.push(marker);
-
-                //map.setCenter(location);
-            }
-
-            // Deletes all markers in the array by removing references to them
-            function deleteOverlays() {
-                if (markersArray) {
-                    for (i in markersArray) {
-                        markersArray[i].setMap(null);
-                    }
-                markersArray.length = 0;
-                }
-            }
-
-          $("#scroll").click(function() {
-              $('html, body').animate({
-                  scrollTop: $("#start").offset().top
-              }, 500);
-          });
-
-          $("#sendSignal").click(function() {
-              $('html, body').animate({
-                  scrollTop: $("#start").offset().top
-              }, 500);
-          });
-        </script>
+        $("#sendSignal").click(function() {
+            $('html, body').animate({
+                scrollTop: $("#start").offset().top
+            }, 500);
+        });
+      </script>
 </body>
 </html>

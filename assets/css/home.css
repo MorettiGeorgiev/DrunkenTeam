@@ -162,7 +162,8 @@ footer{
 		margin-top: 0px!important;
 		
 	}
-	.btn-next-location i{
-
+	.success-message{
+		padding: 5px 0;
+		font-size: 15px;
 	}
 }
