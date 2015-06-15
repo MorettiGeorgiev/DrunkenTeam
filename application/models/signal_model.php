@@ -14,7 +14,8 @@
 				'phone' 		=> $this->input->post('phone'),
 				'email' 		=> $this->input->post('email'),
 			);
+			var_dump($this->session->userdata);
 			$this->db->insert('signals', $data);
-			$this->session->unset_userdata('file');
+			$this->session->unset_userdata();
 		}
 	}

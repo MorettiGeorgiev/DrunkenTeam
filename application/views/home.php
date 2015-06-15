@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Junk</title>
+    <title>Junco</title>
     <link href="<?php echo base_url()?>assets/css/home.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url()?>assets/css/dropzone.css" rel="stylesheet">
 
-    <?php  header('Access-Control-Allow-Origin: *');   ?>
+    <?php header('Access-Control-Allow-Origin: *'); ?>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -71,13 +71,13 @@
 
             <div class="col-md-3 text-center step">
                <i class="fa fa-user fa-5x"></i>
-               <h3>3. Влез или попълни формата</h3>
+               <h3>3. Попълни формата</h3>
                <!-- <p> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat. </p> -->
             </div>
 
             <div class="col-md-3 text-center step">
                <i class="fa fa-paper-plane fa-5x"></i>
-               <h3>4. Сигнализирай на "Столична община"</h3>
+               <h3>4. Изпрати сигнала</h3>
                <!-- <p> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat. </p> -->
                
             </div>
@@ -111,17 +111,14 @@
                                 <input type="text" class="form-control" name="latFld" id="latFld" readonly="readonly" value="-" />
                                 <input type="text" class="form-control" name="lngFld" id="lngFld" readonly="readonly" value="-" />
                             </div>
-                            <input type="submit">
                         </form>  
                     </div>
-                
                 </div>
 
 
                 <div class="row-fluid item signal-form-wrapper">
-                     <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="1"><i class="fa fa-chevron-left fa-5x"></i></a>
-                        <?php $this->load->view('signal_form') ?>
-                        
+                    <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="1"><i class="fa fa-chevron-left fa-5x"></i></a>
+                    <?php $this->load->view('signal_form') ?>
                 </div>
             </div>
         </div>

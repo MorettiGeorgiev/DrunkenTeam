@@ -22,7 +22,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body style="font-size: 12px;">
 	<div class="container text-center">
 		<br />
 		<div class="row text-right">
@@ -36,22 +36,24 @@
 		  <table class="table table-striped table-bordered">
 		  <thead>
 		  	<td>ID</td>
-		  	<td>reg_number</td>
-		  	<td>photo url</td>
+		  	<td>Рег. номер</td>
+		  	<td>Снимка</td>
 		  	<td>latFld</td>
 		  	<td>lngFld</td>
-		  	<td>other_desc</td>
-		  	<td>date</td>
-		  	<td>name</td>
-		  	<td>phone</td>
-		  	<td>email</td>
+		  	<td>Описание</td>
+		  	<td>Дата</td>
+		  	<td>Имена</td>
+		  	<td>Тел. номер</td>
+		  	<td>Е-мейл</td>
 		  </thead>
 			<?php 
 				foreach ($signals as $signal) {
+					$signal_photo = substr($signal['photo'], 28);
+
 					echo "<tr>";
 					echo "<td>{$signal['id']}</td>";
 					echo "<td>{$signal['reg_number']}</td>";
-					echo "<td><a href='{$signal['photo']}'>{$signal['photo']}</a></td>";
+					echo "<td><a href='{$signal['photo']}'>{$signal_photo}</a></td>";
 					echo "<td>{$signal['latFld']}</td>";
 					echo "<td>{$signal['lngFld']}</td>";
 					echo "<td>{$signal['other_desc']}</td>";

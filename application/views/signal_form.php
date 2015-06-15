@@ -6,13 +6,13 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="names">Имена</label>  
+  <label class="col-md-4 control-label" for="names">Трите имена<span style="color: red;">*</span></label>  
   <div class="col-md-8">
-  <input id="names" name="names" type="text" placeholder="Трите имена" class="form-control input-md" value="<?php echo set_value('name'); ?>">
+  <input id="names" name="names" type="text" class="form-control input-md" value="<?php echo set_value('name'); ?>">
   <p id="name-error" class="error-handler"></p>
   </div>
 </div>
@@ -28,7 +28,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="email">Е-мейл адрес</label>  
+  <label class="col-md-4 control-label" for="email">Е-мейл адрес<span style="color: red;">*</span></label>  
   <div class="col-md-8">
   <input id="email" name="email" type="text" placeholder="" class="form-control input-md" value="<?php echo set_value('email'); ?>">
   <p id="email-error" class="error-handler"></p>
@@ -40,7 +40,7 @@
   <label class="col-md-4 control-label" for="reg_number">Рег. номер на МПС</label>  
   <div class="col-md-8">
   <input id="reg_number" name="reg_number" type="text" placeholder="" class="form-control input-md" value="<?php echo set_value('reg_number'); ?>">
-  <span class="help-block">В случай, че МПС-то има регистрационен номер</span>  
+  <span class="help-block"><i>В случай, че МПС-то има регистрационен номер</i></span>  
   </div>
 </div>
 

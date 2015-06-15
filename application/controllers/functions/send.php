@@ -1,7 +1,6 @@
 <?php
 	class Send extends CI_Controller {
 		public function index() {
-			// print_r($_POST);
 			$this->load->model('Signal_model');
 			$this->Signal_model->send();
 			$this->session->set_flashdata('flashdata_ok', 'Благодарим Ви, че сигнализирахте! :)');
