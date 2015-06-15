@@ -1,9 +1,7 @@
-<script type="text/javascript" src="<?php echo base_url() ?>assets/js/signal_form/signal_form.js"></script>
 <?php echo validation_errors(); ?>
 
 
-   <form id="report-information" method="post" class="form-horizontal  col-md-10 col-sm-10 col-xs-6" onsubmit="return checkForm(this);" action="/DrunkenTeam/send/">
-<fieldset>
+   <fieldset class="form-horizontal  col-md-10 col-sm-10 col-xs-6">
 
 <!-- Form Name -->
 

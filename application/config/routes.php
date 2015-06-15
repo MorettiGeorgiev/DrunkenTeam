@@ -43,7 +43,6 @@ $route['404_override'] = '';
 
 $route['logout'] = 'admin/logout';
 $route['uploads'] = 'functions/upload';
-$route['coords'] = 'functions/coords';
 $route['send'] = 'functions/send';
 
 

@@ -9,8 +9,7 @@
 	function postAll() {
 		if( checkForm(document.getElementById("report-information")) ) {
 			$('form').each(function(){
-	        console.log(this);
-	        (this).submit();
+	        	(this).submit();
 	    	});
 
 		}

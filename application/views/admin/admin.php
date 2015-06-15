@@ -48,12 +48,10 @@
 		  </thead>
 			<?php 
 				foreach ($signals as $signal) {
-					$signal['photo'] === 'NO_IMAGE' ? $signal_photo = '<td>No uploaded photo</td>' : $signal_photo = "<td><a href=\"{$signal['photo']}\">".substr($signal['photo'], 28)."</a></td>";
-
 					echo "<tr>";
 					echo "<td>{$signal['id']}</td>";
 					echo "<td>{$signal['reg_number']}</td>";
-					echo $signal_photo;
+					echo $signal['photo'] === '-' ? '<td>-</td>' : "<td><a href=\"{$signal['photo']}\" target=\"_blank\">".substr($signal['photo'], 28)."</a></td>";
 					echo "<td>{$signal['latFld']}</td>";
 					echo "<td>{$signal['lngFld']}</td>";
 					echo "<td>{$signal['other_desc']}</td>";
