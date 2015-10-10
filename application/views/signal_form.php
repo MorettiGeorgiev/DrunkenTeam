@@ -1,7 +1,7 @@
 <?php echo validation_errors(); ?>
 
 
-   <fieldset class="form-horizontal  col-md-10 col-sm-10 col-xs-6">
+   <fieldset class="form-horizontal  col-md-10 col-sm-10 col-xs-12">
 
 <!-- Form Name -->
 
@@ -59,4 +59,4 @@
 </div>
 
 </fieldset>
-<?php echo form_close(); ?>	
+<?php echo form_close(); ?>

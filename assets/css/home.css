@@ -92,11 +92,17 @@ body{
 
 #map {height: 500px; margin-bottom: 20px;}
 
-.btn-next i{
+.btn-steps i{
 	margin-top: 65px;
 }
-.btn-next-location{
+.btn-next{
+	margin-top:0px!important;
+}
+.btn-steps{
 	margin-top: 120px;
+}
+.btn-steps-xs{
+	display: none;
 }
 #latFld, #lngFld{
 	width: 255px;
@@ -145,9 +151,16 @@ footer{
 
 
 @media (max-width: 767px) {
+	#map{
+		height:300px;
+	}
 	.header{
 	padding-top: 10px;
 	font-size: 3em;
+	}
+	.coords{
+		margin-top: 10px;
+		display: inline-block;
 	}
 	.main-nav{
 	background-color: transparent;
@@ -156,11 +169,11 @@ footer{
 	.sub-heading{
 		font-size: 25px;
 	}
-	.btn-next-location{
-		font-size: 10px;
-		padding-top: 0px!important;
-		margin-top: 0px!important;
-		
+	.btn-steps{
+		display: none;
+	}
+	.btn-steps-xs{
+		display: block;
 	}
 	.success-message{
 		padding: 5px 0;

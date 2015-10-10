@@ -41,6 +41,7 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 
+$route['admin'] = 'admin/admin';
 $route['logout'] = 'admin/logout';
 $route['uploads'] = 'functions/upload';
 $route['send'] = 'functions/send';

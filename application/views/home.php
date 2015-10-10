@@ -39,7 +39,6 @@
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Начало</a></li>
                 <li><a href="#" id="sendSignal">Изпрати сигнал</a></li>
-
               </ul>      
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -52,22 +51,22 @@
     <div class="container text-center steps-wrapper" id="start">
         <h2 class="container-heading">Сигнализирай с <span class="green">4 прости</span> стъпки</h2>
         <div class="row">
-            <div class="col-md-3 text-center step">
+            <div class="col-md-3 col-sm-6 text-center step">
                <i class="fa fa-upload fa-5x"></i>
                <h3>1. Качи или направи снимка</h3>
             </div>
 
-            <div class="col-md-3 text-center step">
+            <div class="col-md-3 col-sm-6 text-center step">
                <i class="fa fa-street-view fa-5x"></i>
                <h3>2. Посочи местоположението</h3>
             </div>
 
-            <div class="col-md-3 text-center step">
+            <div class="col-md-3 col-sm-6 text-center step">
                <i class="fa fa-user fa-5x"></i>
                <h3>3. Попълни формата</h3>
             </div>
 
-            <div class="col-md-3 text-center step">
+            <div class="col-md-3 col-sm-6 text-center step">
                <i class="fa fa-paper-plane fa-5x"></i>
                <h3>4. Изпрати сигнала</h3>
             </div>
@@ -76,27 +75,35 @@
     <div class="carousel" id="main">
                 <div class="carousel-inner">
                     <div class="item active text-right">
-                        <form action="/DrunkenTeam/uploads" accept="image/*" method="post" class="dropzone image-form col-md-11 col-sm-11 col-xs-9" id="myAwesomeDropzone" enctype="multipart/form-data"></form>
-                        <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next" data-slide-to="1"  onclick="initMap()"><i class="fa fa-chevron-right fa-5x"></i></a> 
+                        <form action="/DrunkenTeam/uploads" accept="image/*" method="post" class="dropzone image-form col-md-11 col-sm-11 col-xs-" id="myAwesomeDropzone" enctype="multipart/form-data"></form>
+                        <a href="#main" class=" col-md-1 col-sm-1 btn-next btn-steps" data-slide-to="1"  onclick="initMap()"><i class="fa fa-chevron-right fa-5x"></i></a> 
+                        
+                        <a href="#main" class=" col-xs-12 text-center btn-steps-xs" data-slide-to="1"  onclick="initMap()">Следваща стъпка</a> 
+                        
                 </div>
 
                 <div class="item">
-                    <a href="#main" class=" col-md-1 col-sm-1 col-xs-12 btn-next btn-next-location" data-slide-to="0"><i class="fa fa-chevron-left fa-5x"></i></a>
+                    <a href="#main" class=" col-md-1 col-sm-1 col-xs-12 btn-steps" data-slide-to="0"><i class="fa fa-chevron-left fa-5x"></i></a>
                     <div id="map" class="col-md-10 col-sm-10 col-xs-12" ></div>
-                    <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="2"><i class="fa fa-chevron-right fa-5x"></i></a>
+                    <a href="#main" class=" col-md-1 col-sm-1 btn-steps" data-slide-to="2"><i class="fa fa-chevron-right fa-5x"></i></a>
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <form id="report-information" method="post" onsubmit="return checkForm(this);" action="/DrunkenTeam/send/">
                             <label for="title">Координати</label><br />
-                                <div class="form-group form-inline">
+                                <div class="form-group form-inline coords">
                                     <input type="text" class="form-control" name="latFld" id="latFld" readonly value="-" />
                                     <input type="text" class="form-control" name="lngFld" id="lngFld" readonly value="-" />
-                                </div> 
+                                </div>
+                        <div class="row">
+                            <a href="#main" class=" col-xs-6 text-right btn-steps-xs" data-slide-to="0"  onclick="initMap()">Предишна стъпка</a>                                 
+                            <a href="#main" class=" col-xs-6 text-left btn-steps-xs" data-slide-to="2"  onclick="initMap()">Следаваща стъпка</a>                                 
+                        </div>
                     </div>
                 </div>
 
                 <div class="row-fluid item signal-form-wrapper">
-                    <a href="#main" class=" col-md-1 col-sm-1 col-xs-3 btn-next btn-next-location" data-slide-to="1"><i class="fa fa-chevron-left fa-5x"></i></a>
+                    <a href="#main" class=" col-md-1 col-sm-1 btn-steps" data-slide-to="1"><i class="fa fa-chevron-left fa-5x"></i></a>
                     <?php $this->load->view('signal_form') ?>
+                    <a href="#main" class=" col-xs-12 text-center btn-steps-xs" data-slide-to="1"  onclick="initMap()">Предишна стъпка</a>
                 </div>
             </div>
         </div>
