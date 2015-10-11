@@ -39,6 +39,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Начало</a></li>
                 <li><a href="#" id="sendSignal">Изпрати сигнал</a></li>
+                <li><a href="signal/check" id="checkSignal">Провери сигнал</a></li>
               </ul>      
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->

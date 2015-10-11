@@ -45,6 +45,7 @@
 		  	<td>Имена</td>
 		  	<td>Тел. номер</td>
 		  	<td>Е-мейл</td>
+		  	<td>Статус</td>
 		  </thead>
 			<?php 
 				foreach ($signals as $signal) {
@@ -59,6 +60,39 @@
 					echo "<td>{$signal['names']}</td>";
 					echo "<td>{$signal['phone']}</td>";
 					echo "<td>{$signal['email']}</td>";
+					// echo "<td>{$signal['status']}</td>";
+					echo "<td>";
+					echo form_open('admin/change');
+					$selected1 = '';
+					$selected2 = '';
+					$selected3 = '';
+					$selected4 = '';
+					switch ($signal['status']) {
+						case 'Сигналът е изпратен и очаква разглеждане':
+							$selected1 = 'selected';
+							break;
+						case 'Сигналът е одобрен и очаква развитие':
+							$selected2 = 'selected';
+							break;
+						case 'Сигналът е неточен и отхвърлен':
+							$selected3 = 'selected';
+							break;
+						case 'Junco се погрижи за вашият сигнал успешно':
+							$selected4 = 'selected';
+							break;
+					}
+					echo "<div class=\"form-group\">
+					<select name=\"status\">
+						<option value=\"Сигналът е изпратен и очаква разглеждане\" {$selected1}>Сигналът е изпратен и очаква разглеждане</option>
+						<option value=\"Сигналът е одобрен и очаква развитие\" {$selected2}>Сигналът е одобрен и очаква развитие</option>
+						<option value=\"Сигналът е неточен и отхвърлен\" {$selected3}>Сигналът е неточен и отхвърлен</option>
+						<option value=\"Junco се погрижи за вашият сигнал успешно\" {$selected4}>Junco се погрижи за вашият сигнал успешно</option>
+					</select>
+					<input type=\"hidden\" name=\"id\" value=\"{$signal['id']}\" />
+					<input type=\"submit\" class=\"btn btn-primary btn-xs\" value=\"Промени\">
+					</div>";
+					echo form_close();
+					echo "</td>";
 					echo "</tr>";
 				}
 			?>

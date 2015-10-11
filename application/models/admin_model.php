@@ -18,4 +18,12 @@ class Admin_model extends CI_Model{
 	public function get_signals() {
 		return $this->db->get('signals')->result_array();
 	}
+
+	public function update_status() {		
+		$this->db->update(
+			'signals', 
+			['status' => $this->input->post('status')], 
+			['id' => $this->input->post('id')]
+		);
+	}
 }
