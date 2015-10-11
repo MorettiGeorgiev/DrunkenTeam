@@ -13,5 +13,7 @@
 			);
 
 			$this->db->insert('signals', $data);
+			
+			return $this->db->insert_id();
 		}
 	}
