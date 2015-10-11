@@ -16,4 +16,11 @@
 			
 			return $this->db->insert_id();
 		}
+
+		public function get_signal_status() {
+			return $this->db->get_where('signals', [
+				'id' => $this->input->post('id'),
+				'names' => $this->input->post('names')
+			])->status;
+		}
 	}
