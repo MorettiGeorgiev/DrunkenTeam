@@ -45,15 +45,30 @@
           </div><!-- /.container-fluid -->
         </nav>
         <!-- <h1 class="header">Здравей.Това е <span class="green">Junco</span></h1> -->
-        <h2 class="sub-heading">Проверете статуса на Вашият сигнал</h2>
-        <?php form_open('signal_check/check'); ?>
-        <?php form_close(); ?>
-        <a id="scroll" href="#" class="btn btn-circle">Разбери Повече</a>
-    </div>
+        <h2 class="sub-heading" style="margin: 80px 0 20px 0;">Проверете статуса на Вашият сигнал</h2>
+        <div class="container signal-check-form">
+<?php if ($this->session->flashdata('status')): ?>
+                <div class="alert alert-success" role="alert"><b><?php echo $this->session->flashdata('status'); ?></b></div>
+            <?php endif; ?>
+<?php if ($this->session->flashdata('err')): ?>
+                <div class="alert alert-danger" role="alert"><b><?php echo $this->session->flashdata('err'); ?></b></div>
+            <?php endif; ?>
+        <?php echo form_open('signal_check/check'); ?>
+            <div class="form-group">
+                <label class="col-md-4 control-label text-left" style="padding:0;" for="names">Трите имена<span style="color: red;">*</span></label>  
+                <input id="names" name="names" type="text" class="form-control input-md">
+                <br>
+                <label class="col-md-4 control-label text-left" style="padding:0;" for="id">Номер на сигнала<span style="color: red;">*</span></label>  
+                <input id="id" name="id" type="text" class="form-control input-md ?>">
+            </div>
+                <button class="btn btn-lg btn-primary pull-right" style="margin-bottom: 200px; background:#29aba4;" type="submit">Провери</button>
+        </div>
+        <?php echo form_close(); ?>
+    </div>      
     <!-- END TOP -->
     <footer style="margin-top: 0;">
-        <div class="container">
-            <div class="row copyright-wrapper">
+        <div class="container"> 
+            <div class="row copyright-wrapper" style="padding: 10px 0!important;">
                 <div class="col-md-8">
                     <ul class="copyright list-inline">
                         <li>©Junco. All rights reserved</li>

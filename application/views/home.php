@@ -76,7 +76,7 @@
     <div class="carousel" id="main">
                 <div class="carousel-inner">
                     <div class="item active text-right">
-                        <form action="/DrunkenTeam/uploads" accept="image/*" method="post" class="dropzone image-form col-md-11 col-sm-11 col-xs-" id="myAwesomeDropzone" enctype="multipart/form-data"></form>
+                        <form action="/Junco/uploads" accept="image/*" method="post" class="dropzone image-form col-md-11 col-sm-11 col-xs-" id="myAwesomeDropzone" enctype="multipart/form-data"></form>
                         <a href="#main" class=" col-md-1 col-sm-1 btn-next btn-steps" data-slide-to="1"  onclick="initMap()"><i class="fa fa-chevron-right fa-5x"></i></a> 
                         
                         <a href="#main" class=" col-xs-12 text-center btn-steps-xs" data-slide-to="1"  onclick="initMap()">Следваща стъпка</a> 
@@ -88,7 +88,7 @@
                     <div id="map" class="col-md-10 col-sm-10 col-xs-12" ></div>
                     <a href="#main" class=" col-md-1 col-sm-1 btn-steps" data-slide-to="2"><i class="fa fa-chevron-right fa-5x"></i></a>
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <form id="report-information" method="post" onsubmit="return checkForm(this);" action="/DrunkenTeam/send/">
+                        <form id="report-information" method="post" onsubmit="return checkForm(this);" action="/Junco/send/">
                             <label for="title">Координати</label><br />
                                 <div class="form-group form-inline coords">
                                     <input type="text" class="form-control" name="latFld" id="latFld" readonly value="-" />

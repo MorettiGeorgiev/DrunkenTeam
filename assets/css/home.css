@@ -148,23 +148,27 @@ footer{
 	font-size: 20px;
 	font-weight: bold;
 }
-
-
+.signal-check-form{
+	width: 40%!important;
+}
 @media (max-width: 767px) {
 	#map{
 		height:300px;
 	}
+	.signal-check-form{
+		width: 100%!important;
+	}
 	.header{
-	padding-top: 10px;
-	font-size: 3em;
+		padding-top: 10px;
+		font-size: 3em;
 	}
 	.coords{
 		margin-top: 10px;
 		display: inline-block;
 	}
 	.main-nav{
-	background-color: transparent;
-	padding-top: 50px;
+		background-color: transparent;
+		padding-top: 50px;
 	}
 	.sub-heading{
 		font-size: 25px;

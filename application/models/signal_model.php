@@ -21,6 +21,6 @@
 			return $this->db->get_where('signals', [
 				'id' => $this->input->post('id'),
 				'names' => $this->input->post('names')
-			])->status;
+			])->result()[0]->status;
 		}
 	}

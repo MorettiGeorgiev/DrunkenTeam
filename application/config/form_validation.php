@@ -11,5 +11,6 @@
             'rules' => 'trim|required|max_length[30]|min_length[4]|xss_clean|sha1'
         );
 $config = array(
-    'login' => array($username, $password)
+    'login' => array($username, $password),
+    // 'check_signal' => array()
 );
