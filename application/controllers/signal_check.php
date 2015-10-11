@@ -6,4 +6,8 @@ class Signal_check extends CI_Controller {
 		$this->load->view('signal_check');
 	}
 
+	public function check() {
+		// $this->Signal_model->get_signal_status();
+	}
+
 }
